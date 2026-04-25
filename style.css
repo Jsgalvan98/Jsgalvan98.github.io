@@ -283,19 +283,16 @@ header {
     padding: 60px 5%;
     background-color: #ffffff;
 }
-
 .centered-player-container {
     width: 100%;
     max-width: 960px;
     margin: 0 auto;
     position: relative;
-    border: 2px solid #040316; /* Consistent with your site borders */
+    border: 2px solid #040316;
     background-color: #000;
     overflow: hidden;
-    box-shadow: 10px 10px 0px #dddbff; /* Using your Lavender palette */
+    box-shadow: 10px 10px 0px #dddbff;
 }
-
-/* Cover Image & Overlay */
 .cover-image-wrapper {
     width: 100%;
     position: relative;
