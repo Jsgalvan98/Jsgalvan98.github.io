@@ -342,6 +342,9 @@ header {
 .fade {
     animation: fadeEffect 1.5s;
 }
+.mySlides video {
+    cursor: pointer;
+}
 @keyframes fadeEffect {
     from { opacity: 0.4; }
     to { opacity: 1; }

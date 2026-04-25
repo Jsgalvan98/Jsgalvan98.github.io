@@ -38,7 +38,7 @@
             <div class="slideshow-player-hidden" id="main-slideshow-container">
                 
                 <div class="mySlides fade">
-                    <video width="100%" playsinline>
+                    <video width="100%" playsinline muted onclick="togglePlayPause(this)">
                         <source src="galleryvideo.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
@@ -69,38 +69,45 @@
         </div>
     </section>
 
-    <script>
-        let slideIndex = 0;
-        function startVideoSlideshow() {
-            document.getElementById('video-cover-overlay').style.display = 'none';
-            document.getElementById('main-slideshow-container').style.display = 'block';
-            showSlides();
+<script>
+    let slideIndex = 0;
+
+    function togglePlayPause(videoElement) {
+        if (videoElement.paused) {
+            videoElement.play();
+        } else {
+            videoElement.pause();
         }
-        function showSlides() {
-            let slides = document.getElementsByClassName("mySlides");
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-                let v = slides[i].getElementsByTagName('video')[0];
-                if (v) { 
-                    v.pause(); 
-                    v.currentTime = 0; 
-                }
-            }
-            slideIndex++;
-            if (slideIndex > slides.length) { slideIndex = 1; }
-            
-            let activeSlide = slides[slideIndex-1];
-            activeSlide.style.display = "block";
-            
-            let activeVideo = activeSlide.getElementsByTagName('video')[0];
-            if (activeVideo) {
-                activeVideo.play();
-                
-                activeVideo.onended = function() {
-                    showSlides();
-                }
+    }
+    function startVideoSlideshow() {
+        document.getElementById('video-cover-overlay').style.display = 'none';
+        document.getElementById('main-slideshow-container').style.display = 'block';
+        showSlides();
+    }
+    function showSlides() {
+        let slides = document.getElementsByClassName("mySlides");
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+            let v = slides[i].getElementsByTagName('video')[0];
+            if (v) { 
+                v.pause(); 
+                v.currentTime = 0; 
             }
         }
-    </script>
+        slideIndex++;
+        if (slideIndex > slides.length) { slideIndex = 1; }
+        
+        let activeSlide = slides[slideIndex-1];
+        activeSlide.style.display = "block";
+        
+        let activeVideo = activeSlide.getElementsByTagName('video')[0];
+        if (activeVideo) {
+            activeVideo.play();
+            activeVideo.onended = function() {
+                showSlides();
+            }
+        }
+    }
+</script>
 </body>
 </html>
