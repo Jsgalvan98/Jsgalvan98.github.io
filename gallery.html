@@ -68,46 +68,43 @@
             </div>
         </div>
     </section>
-
 <script>
     let slideIndex = 0;
 
     function togglePlayPause(videoElement) {
-        if (videoElement.paused) {
-            videoElement.play();
-        } else {
-            videoElement.pause();
+    videoElement.muted = false; 
+    
+    if (videoElement.paused) {
+        videoElement.play();
+    } else {
+        videoElement.pause();
+    }
+}
+function showSlides() {
+    let slides = document.getElementsByClassName("mySlides");
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+        let v = slides[i].getElementsByTagName('video')[0];
+        if (v) { 
+            v.pause(); 
+            v.currentTime = 0; 
         }
     }
-    function startVideoSlideshow() {
-        document.getElementById('video-cover-overlay').style.display = 'none';
-        document.getElementById('main-slideshow-container').style.display = 'block';
-        showSlides();
-    }
-    function showSlides() {
-        let slides = document.getElementsByClassName("mySlides");
-        for (let i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-            let v = slides[i].getElementsByTagName('video')[0];
-            if (v) { 
-                v.pause(); 
-                v.currentTime = 0; 
-            }
-        }
-        slideIndex++;
-        if (slideIndex > slides.length) { slideIndex = 1; }
-        
-        let activeSlide = slides[slideIndex-1];
-        activeSlide.style.display = "block";
-        
-        let activeVideo = activeSlide.getElementsByTagName('video')[0];
-        if (activeVideo) {
-            activeVideo.play();
-            activeVideo.onended = function() {
-                showSlides();
-            }
+    slideIndex++;
+    if (slideIndex > slides.length) { slideIndex = 1; }
+    
+    let activeSlide = slides[slideIndex-1];
+    activeSlide.style.display = "block";
+
+    let activeVideo = activeSlide.getElementsByTagName('video')[0];
+    if (activeVideo) {
+        activeVideo.muted = false; 
+        activeVideo.play();
+        activeVideo.onended = function() {
+            showSlides();
         }
     }
+}
 </script>
 </body>
 </html>
