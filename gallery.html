@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Prime Kutz Barbershop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <ul class="nav-group">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+            </ul>
+            <div class="logo">
+                <img src="logo.png" alt="Prime Kutz Logo">
+            </div>
+            <ul class="nav-group">
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="gallery-hero">
+        <div class="centered-player-container">
+            
+            <div id="video-cover-overlay" class="cover-image-wrapper" onclick="startVideoSlideshow()">
+                <img src="gabyhaircutting.jpg" alt="Prime Kutz Gallery" class="cover-photo">
+                <button class="big-centered-play">▶</button>
+            </div>
+
+            <div class="slideshow-player-hidden" id="main-slideshow-container">
+                
+                <div class="mySlides fade">
+                    <video width="100%" playsinline>
+                        <source src="galleryvideo.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
+                <div class="mySlides fade">
+                    <video width="100%" playsinline>
+                        <source src="jujuprom.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="services-page">
+        <h1 class="section-title">Services & Pricing</h1>
+        <div class="pricing-container">
+            <div class="pricing-item">
+                <span class="service-name">Men's Haircut</span>
+                <span class="price">$30</span>
+            </div>
+            <div class="pricing-item">
+                <span class="service-name">Beard Trim & Lineup</span>
+                <span class="price">$20</span>
+            </div>
+            <div class="pricing-item">
+                <span class="service-name">Full Service (Cut & Beard)</span>
+                <span class="price">$45</span>
+            </div>
+            <div class="pricing-item">
+                <span class="service-name">Kids Haircut</span>
+                <span class="price">$25</span>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        let slideIndex = 0;
+        function startVideoSlideshow() {
+            document.getElementById('video-cover-overlay').style.display = 'none';
+            document.getElementById('main-slideshow-container').style.display = 'block';
+            showSlides();
+        }
+        function showSlides() {
+            let slides = document.getElementsByClassName("mySlides");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+                let v = slides[i].getElementsByTagName('video')[0];
+                if (v) { 
+                    v.pause(); 
+                    v.currentTime = 0; 
+                }
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1; }
+            
+            let activeSlide = slides[slideIndex-1];
+            activeSlide.style.display = "block";
+            
+            let activeVideo = activeSlide.getElementsByTagName('video')[0];
+            if (activeVideo) {
+                activeVideo.play();
+                
+                activeVideo.onended = function() {
+                    showSlides();
+                };
+            }
+        }
+    </script>
+</body>
+</html>
