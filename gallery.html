@@ -28,24 +28,19 @@
     </header>
 
     <section class="gallery-hero">
-        <div class="centered-player-container">
-            
-            <div id="video-cover-overlay" class="cover-image-wrapper" onclick="startVideoSlideshow()">
-                <img src="gabyhaircutting.jpg" alt="Prime Kutz Gallery" class="cover-photo">
-                <button class="big-centered-play">▶</button>
-            </div>
-
-            <div class="slideshow-player-hidden" id="main-slideshow-container">
-                
-                <div class="mySlides fade">
-                    <video width="100%" playsinline onclick="togglePlayPause(this)">
-                        <source src="galleryvideo.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-            </div>
+    <div class="centered-player-container">
+        <div id="video-cover-overlay" class="cover-image-wrapper" onclick="startVideo()">
+            <img src="gabyhaircutting.jpg" alt="Prime Kutz Gallery" class="cover-photo">
+            <button class="big-centered-play">▶</button>
         </div>
-    </section>
+        <div id="main-video-container" style="display:none">
+            <video id="primeKutzVideo" width="100%" playsinline onclick="togglePlayPause()">
+                <source src="galleryvideo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+</section>
 
     <section class="services-page">
         <h1 class="section-title">Services & Pricing</h1>
@@ -69,42 +64,24 @@
         </div>
     </section>
 <script>
-    let slideIndex = 0;
-
-    function togglePlayPause(videoElement) {
-    videoElement.muted = false; 
-    
-    if (videoElement.paused) {
-        videoElement.play();
-    } else {
-        videoElement.pause();
+    const video = document.getElementById('primeKutzVideo');
+    const cover = document.getElementById('video-cover-overlay');
+    const container = document.getElementById('main-video-container');
+    function startVideo() {
+        cover.style.display = 'none';
+        container.style.display = 'block';
+        video.muted = false;
+        video.play();
     }
-}
-function showSlides() {
-    let slides = document.getElementsByClassName("mySlides");
-    for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-        let v = slides[i].getElementsByTagName('video')[0];
-        if (v) { 
-            v.pause(); 
-            v.currentTime = 0; 
+    function togglePlayPause() {
+        video.muted = false;
+        
+        if (video.paused) {
+            video.play();
+        } else {
+            video.pause();
         }
     }
-    slideIndex++;
-    if (slideIndex > slides.length) { slideIndex = 1; }
-    
-    let activeSlide = slides[slideIndex-1];
-    activeSlide.style.display = "block";
-
-    let activeVideo = activeSlide.getElementsByTagName('video')[0];
-    if (activeVideo) {
-        activeVideo.muted = false; 
-        activeVideo.play();
-        activeVideo.onended = function() {
-            showSlides();
-        }
-    }
-}
 </script>
 </body>
 </html>
