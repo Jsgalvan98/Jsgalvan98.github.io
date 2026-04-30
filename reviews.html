@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews | PRIME KUTZ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul class="nav-group">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+            </ul>
+            <div class="logo">
+                <img src="logo.png" alt="Prime Kutz Logo" class="logo">
+            </div>
+            <ul class="nav-group">
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="reviews-container">
+        <h2>REVIEWS</h2>
+        <p>See what our clients have to say about our professional barber.</p>
+        <div class="reviews-list">
+            <div class="review-card">
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p class="review-text">Highly recommended barber shop! Heard good things and finally tried this place last week. There is a nice vibe in the place and classy decor.</p>
+                <h4 class="reviewer-name">Gustavo O.</h4>
+            </div>
+            <div class="review-card">
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p class="review-text">Great service and Highly recommended. Definitely going back! The experience I've had with Gaby was great. Thank you so much!!</p>
+                <h4 class="reviewer-name">Victor L.</h4>
+            </div>
+        </div>
+        <div class="write-review">
+            <h3>Leave a Review</h3>
+            <form id="review-form">
+                <input type="text" placeholder="Your Name" required>
+                <select required>
+                    <option value="">Rating ★</option>
+                    <option value="5">5 Stars</option>
+                    <option value="4">4 Stars</option>
+                    <option value="3">3 Stars</option>
+                    <option value="2">2 Stars</option>
+                    <option value="1">1 Stars</option>
+                </select>
+                <textarea placeholder="Share your experience..." rows="4" required></textarea>
+                <button type="submit" class="btn btn-primary">Post Review</button>
+            </form>
+        </div>
+    </section>
+    <footer style="text-align: center; padding: 40px; background: #fbfbfe; color: #040316; border-top: 1px solid rgba(255,255,255,0.1);">
+        <p>&copy; 2026 Prime Kutz Barbershop. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

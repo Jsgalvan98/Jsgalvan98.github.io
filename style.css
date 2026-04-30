@@ -220,6 +220,15 @@ header {
     margin-bottom: 40px;
     font-weight: 800;
 }
+.services-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: -20px auto 40px auto;
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 0 20px;
+    color: #040316;
+}
 .services-visual-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -275,6 +284,21 @@ header {
 .price {
     color: #ce2743;
     font-weight: 800;
+}
+.gallery-intro { 
+    text-align: center;
+    padding: 40px 5%;
+    background-color: #dddbff;
+    border-bottom: 40px;
+}
+.gallery-intro p {
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
 }
 .gallery-hero {
     display: flex;
@@ -341,6 +365,162 @@ header {
 }
 .mySlides video {
     cursor: pointer;
+}
+.reviews-container {
+    background-color: #f0f0f0;
+    padding: 60px 10%;
+    text-align: center;
+}
+.reviews-container h2 {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+.reviews-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+.review-card {
+    background-color: #fff;
+    width: 100%;
+    max-width: 700px;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: left;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.05);
+}
+.stars {
+    color: #d4af37;
+    margin-bottom: 15px;
+}
+.review-text {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+.reviewer-name {
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+.write-review {
+    margin-top: 50px;
+    background: #dddbff;
+    padding: 40px;
+    border: 2px solid #040316;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.write-review form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.write-review input, 
+.write-review select, 
+.write-review textarea {
+    padding: 12px;
+    border: 2px solid #040316;
+    font-size: 1rem;
+}
+.light-theme {
+    background-color: #ffffff;
+    color: #040316;
+}
+.contact-header-image {
+    height: 350px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contact-subtext {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+    color: #040316;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.5;
+}
+.overlay-text h1 {
+    font-size: 3.5rem;
+    color: white;
+    letter-spacing: 4px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+}
+.middle-info {
+    padding: 60px 10%;
+    text-align: center;
+}
+.middle-info h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+.phone-link {
+    color: #ce2743;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+.contact-image-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 40px;
+}
+.contact-image-grid img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border: 1px solid #ddd;
+}
+.get-in-touch {
+    background-color: #fbfbfe;
+    padding: 80px 10%;
+    display: flex;
+    justify-content: center;
+}
+.form-container {
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+.form-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 30px;
+}
+.form-container input, .form-container textarea {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #040316;
+    padding: 10px;
+    font-size: 1rem;
+    outline: none;
+}
+.submit-btn {
+    background-color: #040316;
+    color: white;
+    padding: 15px;
+    border: none;
+    font-weight: bold;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.submit-btn:hover {
+    background-color: #ce2743;
 }
 @keyframes fadeEffect {
     from { opacity: 0.4; }
@@ -432,6 +612,12 @@ header {
         width: 60px;
         height: 60px;
         font-size: 1.5rem;
+    }
+    .reviews-container {
+        padding: 40px 5%;
+    }
+    .contact-image-grid {
+        grid-template-columns: 1fr;
     }
 }
 
