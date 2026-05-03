@@ -171,12 +171,12 @@ header {
     align-items: center;
 }
 .about-container {
-    min-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+        min-width: auto; 
+        width: 100%;
 }
 .about-visual img {
     width: 100%;
