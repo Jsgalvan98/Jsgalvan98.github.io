@@ -597,7 +597,7 @@ header {
     .about-container {
         display: flex;
         flex-direction: column;
-        gap: 30px;
+        gap: 20px;
         text-align: center;
     }
     .about-visual {
@@ -607,22 +607,33 @@ header {
     }
     .about-visual img {
         max-width: 280px;
-        width: 90%;
+        width: 85%;
         height: auto;
+        display: block;
+        margin:0 auto;
         box-shadow: 8px 8px 0px #ce2743;
+        margin-bottom: 25px;
     }
-    .about-info h1 {
-        font-size: 2rem;
-        margin-bottom: 15px;
+    .about-info {
+        width: 100%;
+    }
+    .about-info h2 {
+        font-size: 1.5rem;
+    }
+    .about-info p {
+        font-size: 1rem;
+        line-height: 1.5;
+        margin-bottom: 20px;
     }
     .about-info .hero-buttons {
+        display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 15px;
+        gap: 10px;
     }
     .btn {
         width: 100%;
-        max-width: 300px;
+        max-width: 280px;
     }
     .pricing-container {
         grid-template-columns: 1fr;
